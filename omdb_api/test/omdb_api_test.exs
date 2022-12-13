@@ -9,7 +9,7 @@ defmodule OmdbApiTest do
     t = nil
 
     resultado = OmdbApi.search(t)
-    assert {:error, "titulo não pode ser nil"} == resultado
+    assert {:error, "titulo nao pode ser nil"} === resultado
   end
 
   test "deve retornar erro ao informar titulo que não seja string" do
