@@ -22,7 +22,7 @@ defmodule OmdbApiTest do
   test "deve retornar erro ao informar titulo vazio" do
     t = ""
 
-    resultado = OmdbApiep.search(t)
+    resultado = OmdbApi.search(t)
     assert {:error, "titulo nao pode ser vazio"} == resultado
   end
 

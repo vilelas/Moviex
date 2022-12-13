@@ -1,4 +1,4 @@
-defmodule Omdb do
+defmodule OmdbApi do
   # Precisamos definir a URL da API OMDB e a sua chave de acesso,
   # que você pode obter em https://www.omdbapi.com/
 
