@@ -19,9 +19,7 @@ mix deps.get
 
 This command will install all the dependencies listed in the ``mix.exs`` file, ensuring that the project can run correctly.
 
-Once the dependencies have been installed, the project is ready to run. To do this, simply use the command ``iex -S mix``. 
-
-Now, to use the main script, just type the following command: 
+Once the dependencies have been installed, the project is ready to run. To do this, simply use the command ``iex -S mix``. Now, to use the main script, just type the following command: 
 
 ```elixir
 $ iex(1)> OmdbApi.search("movie name")
