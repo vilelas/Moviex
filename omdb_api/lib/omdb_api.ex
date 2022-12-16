@@ -8,10 +8,7 @@ defmodule OmdbApi do
   # Agora, podemos definir uma função que faz a requisição à API
   # e retorna o resultado em formato JSON
   def fetch(title) do
-
     # Criamos a URL da requisição adicionando o título do filme e a chave de acesso
-
-    # url = "#{@omdb_api_url}?apikey=#{@api_key}&s=#{URI.encode(title)}"
     url = "#{@omdb_api_url}?apikey=#{@api_key}&t=#{title}"
 
     response = HTTPoison.get!(url)
@@ -23,15 +20,9 @@ defmodule OmdbApi do
 
   # Casos abaixo de sucesso e erro
   def search(title) do
-    cond do
-      is_nil(title) ->
-        {:error, "titulo nao pode ser nil"}
-      !is_bitstring(title) ->
-        {:error, "titulo deve ser String"}
-      String.trim(title) == "" ->
-        {:error, "titulo nao pode ser vazio"}
-      true ->
-        fetch(title)
+    case is_nil(title) || !is_bitstring(title) || String.trim(title) == "" do
+      true -> {:error, "titulo invalido"}
+      false -> fetch(title)
     end
   end
 end
